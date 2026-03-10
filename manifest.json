@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "X Tweet URL Collector",
+  "version": "1.0",
+  "description": "Collect all tweet URLs from any X profile page and copy them for use in X Profile Analyzer",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "clipboardWrite"
+  ],
+  "host_permissions": [
+    "https://x.com/*",
+    "https://twitter.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "X Tweet URL Collector"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://x.com/*", "https://twitter.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  }
+}
